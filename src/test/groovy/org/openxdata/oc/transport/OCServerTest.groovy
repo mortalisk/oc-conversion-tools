@@ -45,10 +45,12 @@ public class OCServerTest {
 	public void testGetOpenXdataForm() {
 		
 		Collection<String> subjectKeys = client.getSubjectKeys("default-study")
-		String xml = client.getOpenxdataForm("default-study", subjectKeys)
+		def xml = client.getOpenxdataForm("default-study")
 		
+		println XmlUtil.serialize(xml.convertedXformXml)
 		assertNotNull(subjectKeys)
 		assertNotNull(xml)
+		
 	}
 	
 	@Test
